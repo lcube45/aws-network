@@ -31,7 +31,3 @@ provider "aws" {
     role_arn = "arn:aws:iam::966616891605:role/Devops"
   }
 }
-
-resource "aws_s3_bucket" "implicit" {
-  bucket = "lcube-tf-example-terraform-bucket-implicit-target"
-}
