@@ -18,5 +18,5 @@ provider "aws" {
 
 resource "aws_s3_bucket" "demo" {
   provider = aws.sandbox
-  bucket = "lcube-tf-example-terraform-bucket-dncbdhddn"
+  bucket = "lcube-tf-example-terraform-bucket-explicit-target"
 }
