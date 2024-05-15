@@ -16,7 +16,20 @@ provider "aws" {
   }
 }
 
+provider "aws" {
+  region = "eu-west-3"
+
+  assume_role {
+    role_arn = "arn:aws:iam::966616891605:role/Devops"
+  }
+}
+
+
 resource "aws_s3_bucket" "demo" {
   provider = aws.sandbox
   bucket = "lcube-tf-example-terraform-bucket-explicit-target"
+}
+
+resource "aws_s3_bucket" "implicit" {
+  bucket = "lcube-tf-example-terraform-bucket-implicit-target"
 }
