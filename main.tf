@@ -5,6 +5,14 @@ terraform {
       version = "~> 5.0"
     }
   }
+
+  backend "s3" {
+    bucket         = "lcube-tfstate-bucket"
+    key            = "global/terraform.tfstate"
+    region         = "eu-west-3"
+    dynamodb_table = "lcube-tfstate-lock"
+    encrypt        = true
+  }
 }
 
 provider "aws" {
